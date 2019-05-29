@@ -1,0 +1,42 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Sun Apr  7 03:58:43 2019
+| Host         : jose-vpceg20el running 64-bit Ubuntu 16.04.6 LTS
+| Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
+| Design       : design_1_wrapper
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 1
++--------+----------+--------------------------------------------------------+------------+
+| Rule   | Severity | Description                                            | Violations |
++--------+----------+--------------------------------------------------------+------------+
+| XDCC-7 | Warning  | Scoped Clock constraint overwritten on the same source | 1          |
++--------+----------+--------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+XDCC-7#1 Warning
+Scoped Clock constraint overwritten on the same source  
+A new clock constraint create_clock overrides a previous scoped clock constraint defined on the same source. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
+New: create_clock -period 10.000 -name CLK -waveform {0.000 5.000} [get_ports clk] (Source: /opt/Xilinx/Vivado/2018.3/bin/reloj/reloj.srcs/constrs_1/new/pines_basys3.xdc (Line: 10))
+Previous: create_clock -period 10.000 [get_ports clk] (Source: /opt/Xilinx/Vivado/2018.3/bin/reloj/reloj.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc (Line: 56))
+Related violations: <none>
+
+
